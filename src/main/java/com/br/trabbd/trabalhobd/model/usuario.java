@@ -2,9 +2,12 @@ package com.br.trabbd.trabalhobd.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
-
+import javax.xml.crypto.Data;
+import java.sql.Date;
+import java.sql.Time;
 
 
 @Entity
@@ -26,17 +29,17 @@ public class usuario {
     @Column(name = "setor", length = 25, nullable = true)
     private String setor;
 
-    @NotBlank(message = "A data de início não pode ser nula")
+    @NotNull(message = "A data de início não pode ser nula")
     @Column(name = "dataini", length = 25, nullable = true)
-    private String dataini;
+    private Date dataini;
 
-    @NotBlank(message = "A hora de início não pode ser nula")
+    @NotNull(message = "A hora de início não pode ser nula")
     @Column(name = "horaini", length = 25, nullable = true)
-    private String horaini;
+    private Time horaini;
 
-    @NotBlank(message = "A hora de fim não pode ser nula")
+    @NotNull(message = "A hora de fim não pode ser nula")
     @Column(name = "horafim", length = 25, nullable = true)
-    private String horafim;
+    private Time horafim;
 
     @NotBlank(message = "A descrição não pode ser nula")
     @Size(min = 1, max = 255, message = "A descrição deve ter entre 1 e 255 caracteres")
@@ -68,27 +71,27 @@ public class usuario {
         this.setor = setor;
     }
 
-    public String getDataini() {
+    public Date getDataini() {
         return dataini;
     }
 
-    public void setDataini(String dataini) {
+    public void setDataini(Date dataini) {
         this.dataini = dataini;
     }
 
-    public String getHoraini() {
+    public Time getHoraini() {
         return horaini;
     }
 
-    public void setHoraini(String horaini) {
+    public void setHoraini(Time horaini) {
         this.horaini = horaini;
     }
 
-    public String getHorafim() {
+    public Time getHorafim() {
         return horafim;
     }
 
-    public void setHorafim(String horafim) {
+    public void setHorafim(Time horafim) {
         this.horafim = horafim;
     }
 
